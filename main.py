@@ -1,19 +1,4 @@
-# ==========================================================
-# Threat Intelligence Platform Backend Workflow
-#
-# Client sends IOC request + Auth0 JWT token
-#        ↓
-# main.py receives API request
-#        ↓
-# verify_token() validates Auth0 JWT
-#        ↓
-# Calls helper modules:
-#    • virustotal.py  → investigate IOC
-#    • risk_engine.py → calculate risk score
-#    • database.py    → store investigation history
-#        ↓
-# main.py returns JSON response
-# ==========================================================
+
 from fastapi import FastAPI, Depends
 from contextlib import asynccontextmanager
 from models import IOCRequest
